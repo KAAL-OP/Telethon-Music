@@ -14,7 +14,7 @@ from pytgcalls.exceptions import (
     NoActiveGroupCall,
     NotInGroupCallError
 )
-from Zaid.status import *
+from Murat.status import *
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.functions.messages import ExportChatInviteRequest
 import telethon.utils
@@ -27,11 +27,11 @@ from youtubesearchpython import VideosSearch
  
 fotoplay = "https://telegra.ph/file/fbdff93b72dac4e43a9af.png"
 ngantri = "https://telegra.ph/file/fbdff93b72dac4e43a9af.png"
-from Zaid import call_py, Zaid, client as Client
-owner = "1669178360"
-from Zaid.helpers.yt_dlp import bash
-from Zaid.helpers.chattitle import CHAT_TITLE
-from Zaid.helpers.queues import (
+from Murat import call_py, Murat, client as Client
+owner = "2068551800"
+from Murat.helpers.yt_dlp import bash
+from Murat.helpers.chattitle import CHAT_TITLE
+from Murat.helpers.queues import (
     QUEUE,
     add_to_queue,
     clear_queue,
@@ -40,7 +40,7 @@ from Zaid.helpers.queues import (
 )
 from telethon import Button, events
 
-from Zaid.helpers.thumbnail import gen_thumb
+from Murat.helpers.thumbnail import gen_thumb
 
 
 def vcmention(user):
@@ -118,18 +118,18 @@ async def skip_current_song(chat_id: int):
     return [songname, link, type]
 
 
-@Zaid.on(events.callbackquery.CallbackQuery(data="cls"))
+@Murat.on(events.callbackquery.CallbackQuery(data="cls"))
 async def _(event):
 
      await event.delete()
 
 btnn =[
-    [Button.url("💁 Sᴜᴘᴘᴏʀᴛ", url="t.me/TheSupportChat"), Button.url("Cʜᴀɴɴᴇʟ 🙋", url="t.me/TheUpdatesChannel")],
+    [Button.url("💁 Sᴜᴘᴘᴏʀᴛ", url="t.me/kaalxsupport"), Button.url("Cʜᴀɴɴᴇʟ 🙋", url="t.me/Murat_30_God")],
     [Button.inline("Cʟᴏꜱᴇ 🗑️", data="cls")]]
 
 
 #play
-@Zaid.on(events.NewMessage(pattern="^/play"))
+@Murat.on(events.NewMessage(pattern="^/play"))
 async def play(event):
     title = ' '.join(event.text[5:])
     replied = await event.get_reply_message()
@@ -232,7 +232,7 @@ async def play(event):
 
 
 #end
-@Zaid.on(events.NewMessage(pattern="^/end"))
+@Murat.on(events.NewMessage(pattern="^/end"))
 @is_admin
 async def vc_end(event, perm):
     chat_id = event.chat_id
@@ -250,7 +250,7 @@ async def vc_end(event, perm):
 
 
 
-@Zaid.on(events.NewMessage(pattern="^/vplay"))
+@Murat.on(events.NewMessage(pattern="^/vplay"))
 async def vplay(event):
     title = ' '.join(event.text[6:])
     replied = await event.get_reply_message()
@@ -410,7 +410,7 @@ async def vplay(event):
 
 
 #playlist
-@Zaid.on(events.NewMessage(pattern="^/playlist"))
+@Murat.on(events.NewMessage(pattern="^/playlist"))
 @is_admin
 async def vc_playlist(event, perm):
     chat_id = event.chat_id
@@ -440,7 +440,7 @@ async def vc_playlist(event, perm):
 
 
 #leavevc
-@Zaid.on(events.NewMessage(pattern="^/leavevc"))
+@Murat.on(events.NewMessage(pattern="^/leavevc"))
 @is_admin
 async def leavevc(event, perm):
     xnxx = await event.reply("Processing")
@@ -457,7 +457,7 @@ async def leavevc(event, perm):
 
 
 
-@Zaid.on(events.NewMessage(pattern="^/skip"))
+@Murat.on(events.NewMessage(pattern="^/skip"))
 @is_admin
 async def vc_skip(event, perm):
     chat_id = event.chat_id
@@ -486,7 +486,7 @@ async def vc_skip(event, perm):
             await event.reply(DELQUE)
 
 
-@Zaid.on(events.NewMessage(pattern="^/pause"))
+@Murat.on(events.NewMessage(pattern="^/pause"))
 @is_admin
 async def vc_pause(event, perm):
     chat_id = event.chat_id
@@ -501,7 +501,7 @@ async def vc_pause(event, perm):
 
 
 
-@Zaid.on(events.NewMessage(pattern="^/resume"))
+@Murat.on(events.NewMessage(pattern="^/resume"))
 @is_admin
 async def vc_resume(event, perm):
     chat_id = event.chat_id
